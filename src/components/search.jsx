@@ -12,7 +12,6 @@ const Search = (props) => {
         if (search === '') {
             return
         }
-
         if (event.key === 'Enter') {
             searchMovies(search, type)
         }
@@ -28,8 +27,15 @@ const Search = (props) => {
 
     const handleFilter = (event) => {
         setType(event.target.dataset.type);
-        searchMovies(search, event.target.dataset.type);
+        if (search === '') {
+            searchMovies('matrix', event.target.dataset.type);
+        } else {
+            searchMovies(search, event.target.dataset.type)
+        }
+            
     };
+
+    
 
 
     return (
@@ -39,7 +45,7 @@ const Search = (props) => {
                 type="email"
                 className="validate"
                 value={search}
-                onChange={(e) => setSearch( e.target.value)}
+                onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={handleKey}
             />
             <button className="btn search-btn" onClick={handleButton}>Search</button>
