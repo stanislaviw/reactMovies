@@ -1,4 +1,6 @@
-Adaptive web app for seacrh movies or series with filters.
+My first React project.
+
+Adaptive web app for search movies or series with filters(all, only movies, only series).
 
 Used React, Javascript, HTML, CSS, OMDb АPI, MaterializeCSS, Git, NPM, GitHub Pages.
 
